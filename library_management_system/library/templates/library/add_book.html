@@ -1,0 +1,31 @@
+<form method="post">
+    {% csrf_token %}
+    
+    <label>Title:</label>
+    <input type="text" name="title" value="{{ book.title }}" required><br>
+
+    <label>Author:</label>
+    <input type="text" name="author" value="{{ book.author }}" required><br>
+
+    <label>Genre:</label>
+    <input type="text" name="genre" value="{{ book.genre }}" required>
+    {% if errors.genre %}
+        <span style="color: red;">{{ errors.genre }}</span>
+    {% endif %}
+    <br>
+
+    <label>Publication Year:</label>
+    <input type="number" name="publication_year" value="{{ book.publication_year }}" required>
+    {% if errors.publication_year %}
+        <span style="color: red;">{{ errors.publication_year }}</span>
+    {% endif %}
+    <br>
+
+    <label>Availability:</label>
+    <input type="hidden" name="availability_status" value="False">  <!-- Always sends False -->
+    <input type="checkbox" name="availability_status" value="True"><br>  <!-- Sends True when checked -->
+
+    <button type="submit">Add Book</button>
+</form>
+
+<a href="{% url 'book_list' %}">Back to List</a>

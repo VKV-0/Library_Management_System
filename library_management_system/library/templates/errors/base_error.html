@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated the title block to allow dynamic titles from extended templates -->
+    <title>{% block title %}Error{% endblock %}</title>  
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Ensured consistent font styling */
+            background-color: #f8f9fa;     /* Light background for better readability */
+            color: #333;                    /* Dark text color for contrast */
+            text-align: center;             /* Centered text alignment */
+            padding: 50px;                  /* Added padding for better spacing */
+        }
+        h1 {
+            font-size: 3em;                 /* Increased font size for error messages */
+            color: #dc3545;                 /* Red color for error messages */
+        }
+        p {
+            font-size: 1.5em;               /* Set a larger font size for description */
+        }
+        a {
+            color: #007bff;                 /* Blue color for links */
+            text-decoration: none;           /* Removed underline for links */
+        }
+        a:hover {
+            text-decoration: underline;      /* Added underline on hover for better UX */
+        }
+    </style>
+</head>
+<body>
+    <!-- Block for dynamic error message title -->
+    <h1>{% block error_message %}Error{% endblock %}</h1>
+    <!-- Block for dynamic error description -->
+    <p>{% block error_description %}An error occurred.{% endblock %}</p>
+    <!-- Link back to the homepage; ensure the URL name corresponds to your project -->
+    <a href="/">Go back to the homepage</a>
+</body>
+</html>

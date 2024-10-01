@@ -1,0 +1,9 @@
+{% extends 'errors/base_error.html' %}
+
+{% block content %}
+    {% block title %}400 - Bad Request{% endblock %}
+    {% block error_message %}Bad Request{% endblock %}
+    {% block error_description %}
+        The request could not be understood or was missing required parameters. Please check your input and try again.
+    {% endblock %}
+{% endblock %}
